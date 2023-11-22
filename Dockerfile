@@ -23,6 +23,7 @@ RUN sed -i '$ i \\x27personalIdentityNumber\x27         => \x27urn:oid:1.2.752.2
 RUN ln -sfT /dev/stderr /var/log/apache2/error.log; \
 	ln -sfT /dev/stdout /var/log/apache2/access.log; \
 	ln -sfT /dev/stdout /var/log/apache2/other_vhosts_access.log; \
+    mkdir -p /var/simplesamlphp/log; \
 	ln -sfT /dev/stdout /var/simplesamlphp/log/simplesamlphp.log
 
 ADD start.sh /start.sh
