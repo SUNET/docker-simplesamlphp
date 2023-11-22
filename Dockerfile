@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
         php-intl \
         php-sqlite3
 RUN  a2dissite 000-default
-RUN  a2enmod rewrite
+RUN  a2enmod rewrite ssl
 WORKDIR /var
 RUN curl -L -o simplesamlphp.tar.gz https://github.com/simplesamlphp/simplesamlphp/releases/download/v$SSP_VER/simplesamlphp-$SSP_VER.tar.gz && \
         tar xvf simplesamlphp.tar.gz && \
