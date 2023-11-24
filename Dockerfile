@@ -25,5 +25,6 @@ RUN ln -sfT /dev/stderr /var/log/apache2/error.log; \
 	ln -sfT /dev/stdout /var/log/apache2/other_vhosts_access.log
 
 
+ADD modules /var/simplesamlphp/
 ADD start.sh /start.sh
 ENTRYPOINT ["/start.sh"]
