@@ -33,7 +33,7 @@ class FancyThemeController implements TemplateControllerInterface
 	$users = [];
 	foreach ($sources as $id) {
 	    if ($id != "example-userpass") {
-	        next;
+	        continue;
 	    }
             $source = $config->getArray($id);
 	    // We don't want the name of the source
