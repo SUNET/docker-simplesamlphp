@@ -5,7 +5,6 @@ namespace SimpleSAML\Module\swamid;
 use Twig\Environment;
 use SimpleSAML\XHTML\TemplateControllerInterface;
 use SimpleSAML\{Configuration, Error, Logger, Module, Session, Utils};
-//use SimpleSAML\{Logger};
 
 class FancyThemeController implements TemplateControllerInterface
 {
