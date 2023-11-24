@@ -41,10 +41,10 @@ class FancyThemeController implements TemplateControllerInterface
 	    unset($source[0]);
 
 	    foreach ($source as $key => $user) {
-		$keyArray = explode(":", $key);
-		$users[] = $keyArray[0];
+		    $keyArray = explode(":", $key);
+		    $users[] = $keyArray[0];
 	    }
-        }
+    }
 
 	$data['users'] = $users;
     }
