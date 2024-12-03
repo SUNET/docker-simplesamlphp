@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
         composer \
         php-curl \
         php-intl \
+        php-ldap \
         php-sqlite3
 RUN  a2dissite 000-default
 RUN  a2enmod rewrite ssl
