@@ -1,5 +1,5 @@
 FROM debian:bookworm
-ENV SSP_VER 2.1.1
+ENV SSP_VER 2.3.5
 RUN apt-get update && apt-get install -y \
         curl \
         libicu-dev \
