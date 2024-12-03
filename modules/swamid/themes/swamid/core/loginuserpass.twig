@@ -37,7 +37,7 @@
 
     <p>{{ 'A service has requested you to authenticate yourself. Please select a user and click on Login to processed.'|trans }}</p>
     <div class="center-form login-form-start">
-        <form id="f" class="pure-form pure-form-aligned" action="{{ moduleURL('core/loginuserpass', {'AuthState': AuthState}) }}"
+        <form id="f" class="pure-form pure-form-aligned" action="{{ formURL }}"
             method="post" name="f" spellcheck="false">
                 <div class="pure-control-group">
                     <label for="username">{{ 'User'|trans }}</label>
