@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 RUN  a2dissite 000-default
 RUN  a2enmod rewrite ssl
 WORKDIR /var
-RUN curl -L -o simplesamlphp.tar.gz https://github.com/simplesamlphp/simplesamlphp/releases/download/v$SSP_VER/simplesamlphp-$SSP_VER.tar.gz && \
+RUN curl -L -o simplesamlphp.tar.gz https://github.com/simplesamlphp/simplesamlphp/releases/download/v$SSP_VER/simplesamlphp-$SSP_VER-full.tar.gz && \
         tar xvf simplesamlphp.tar.gz && \
         mv simplesamlphp-$SSP_VER simplesamlphp && \
         rm simplesamlphp.tar.gz && \
