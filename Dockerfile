@@ -10,18 +10,18 @@ RUN apt-get update && apt-get install -y \
         php-curl \
         php-intl \
         php-ldap \
-        php-sqlite3
-RUN  a2dissite 000-default
-RUN  a2enmod rewrite ssl
+        php-sqlite3 && \
+     a2dissite 000-default && \
+     a2enmod rewrite ssl
 WORKDIR /var
 RUN curl -L -o simplesamlphp.tar.gz https://github.com/simplesamlphp/simplesamlphp/releases/download/v$SSP_VER/simplesamlphp-$SSP_VER-full.tar.gz && \
         tar xvf simplesamlphp.tar.gz && \
         mv simplesamlphp-$SSP_VER simplesamlphp && \
         rm simplesamlphp.tar.gz && \
         cd simplesamlphp && \
-        composer require simplesamlphp/simplesamlphp-module-entitycategories:v2.0.0
-RUN sed -i '$ i \\x27personalIdentityNumber\x27         => \x27urn:oid:1.2.752.29.4.13\x27,' /var/simplesamlphp/attributemap/name2oid.php
-RUN ln -sfT /dev/stderr /var/log/apache2/error.log; \
+        composer -W require simplesamlphp/simplesamlphp-module-entitycategories:v2.0.0 && \
+        sed -i '$ i \\x27personalIdentityNumber\x27         => \x27urn:oid:1.2.752.29.4.13\x27,' /var/simplesamlphp/attributemap/name2oid.php && \
+        ln -sfT /dev/stderr /var/log/apache2/error.log; \
 	ln -sfT /dev/stdout /var/log/apache2/access.log; \
 	ln -sfT /dev/stdout /var/log/apache2/other_vhosts_access.log
 
