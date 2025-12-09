@@ -1,5 +1,7 @@
 builders:
   - script
+git:
+  branch: simplesamlphp-2.4.4
 script:
   - "./jenkins-docker-build-and-push.sh"
 clean_workspace: true

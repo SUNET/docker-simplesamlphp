@@ -33,7 +33,7 @@ fi
 
 BASE_TAG="docker.sunet.se/${project_name_short}"
 DOCKER_TAG="${BASE_TAG}:${VERSION}"
-LATEST_TAG="${BASE_TAG}:latest"
+LATEST_TAG="${BASE_TAG}:latest_paulo"
 echo "${script_name}: building DOCKER_TAG ${DOCKER_TAG} ${LATEST_TAG}"
 
 docker build --tag "${DOCKER_TAG}" --tag "${LATEST_TAG}" .
